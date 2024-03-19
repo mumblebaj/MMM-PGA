@@ -41,9 +41,6 @@ Module.register("MMM-PGA", {
 
     },
 
-
-
-
     getStyles: function () {
         return ["MMM-PGA.css"];
     },
@@ -106,18 +103,6 @@ Module.register("MMM-PGA", {
 
     stop: function () {
         Log.info('Stopping module ' + this.name);
-      },
-    
-      resume: function () {
-        Log.info('Resuming module ' + this.name);
-        Log.debug('with config: ' + JSON.stringify(this.config));
-        this.suspend = false;
-        this.updateDom()
-      },
-    
-      suspend: function () {
-        Log.info('Suspending module ' + this.name);
-        this.suspend = true;
       },
 
     //If Configured for a remote file retrieve the favorites from remote source
