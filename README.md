@@ -19,8 +19,8 @@ Whats New?
 - Add node-fetch@2.6.1
 - Remove jsdom
 - Change FEDEXCUP and OWGR to RapidAPI due to changes to original websites and scraping them
-- RapidAPI Key Required
-- Get a key by sunscribing to the following API on RapidAPI: [Golf Leaderboard Data](https://rapidapi.com/sportcontentapi/api/golf-leaderboard-data) 
+- [Golf Leaderboard Data](https://rapidapi.com/sportcontentapi/api/golf-leaderboard-data) Key Required
+- Get a key by subscribing to the following API on RapidAPI: [Golf Leaderboard Data](https://rapidapi.com/sportcontentapi/api/golf-leaderboard-data) 
 - New option added to config: rapidAPIKey
 
 # Screen Shots
