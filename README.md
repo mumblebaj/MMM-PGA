@@ -29,7 +29,7 @@ Whats New?
 
 ### With Location
 
-![image](images/screenshot-1.png)
+![image](images/screenshot-5.png)
 
 ### No Locations
 
@@ -45,7 +45,7 @@ Whats New?
 ## Leader Board View
 
 ### Color With Flags Large Font
-![image](images/screenshot-5.png)
+![image](images/screenshot-1.png)
 
 
 ### No Color With Flag
