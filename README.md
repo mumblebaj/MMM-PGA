@@ -85,7 +85,6 @@ Option|Description
 `remoteFavoritesFile`| Location of a remote File to use for favorites. The format of the file is a json file with exactly what you would set in the favorites configuration. If this option is set the favorites defined in the config will be ignored. If you chose to read the file from the internet the format will be a url. <br><br>For example reading the file from dropbox would look something like this <br> `"https://dl.dropboxusercontent.com/s/7########favorites.json"` <br><br>If using a local file setting would look like this <br> `"utilities/favorites.json"` <br> where the favorites file is stored in a directory name utilities under the MMM-PGA folder<br><br>Type: String containing url to favorites file.<br> Defaults to null
 `rapidAPIKey`| Your RapidAPI key, necessary if you want to display FEDEXCUP and OWGR standings.<br> Defaults to null
 
-
 # Example Configuration
 
 ```
@@ -95,7 +94,7 @@ Option|Description
 			maxWidth: "100%",
 			config: {
 				colored: true,
-				rotateInterval: 30 * 1000,
+				rotateInterval: 30 * 1000, //milliseconds
 				animationSpeed: 5,
 				showBoards: true,
 				showLocation: true,
