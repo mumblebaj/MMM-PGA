@@ -2,7 +2,7 @@
 
 This a module for MagicMirror² <br>
 https://magicmirror.builders <br>
-https://github.com/MichMich/MagicMirror
+https://github.com/MagicMirrorOrg/MagicMirror
 
 A MagicMirror² Module to show Upcoming PGA Tournaments. Once the tournament starts a configurable Leader Board will be shown along with scores for your favorite golfers.
 
