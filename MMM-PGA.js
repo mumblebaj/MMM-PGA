@@ -1,5 +1,4 @@
-
-/* Magic Mirror
+/* MagicMirror²
  * Module: MMM-PGA
  *
  * By mcl8on
@@ -498,7 +497,7 @@ Module.register("MMM-PGA", {
         return header;
     },
 
-    /* Main Magic Mirror module to build the Contect of the module*/
+    /* Main MagicMirror² module to build the Content of the module*/
 
     getDom: function () {
 
