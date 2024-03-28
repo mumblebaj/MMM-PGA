@@ -42,7 +42,7 @@ readTextFile("favorites.json", function(text){
 
 
 
-let d = new Date();
+let d = new Date(Date.now());
 document.body.innerHTML = "<h1>Today's date is " + d + "</h1>";
 
 
