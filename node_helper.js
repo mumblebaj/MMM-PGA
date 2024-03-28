@@ -1,11 +1,11 @@
-/* Magic Mirror
+/* MagicMirror²
  * Module: MMM-PGA
  *
  * By mcl8on
  *
  */
 const NodeHelper = require('node_helper');
-const request = require('request');
+//const request = require('request');
 var ESPN = require('./ESPN.js');
 const OWGR = require('./OWGR.js');
 const FEDEXCUP = require('./FEDEXCUP.js');
