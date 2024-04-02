@@ -2,7 +2,7 @@
 
 This a module for MagicMirror² <br>
 https://magicmirror.builders <br>
-https://github.com/MichMich/MagicMirror
+https://github.com/MagicMirrorOrg/MagicMirror
 
 A MagicMirror² Module to show Upcoming PGA Tournaments. Once the tournament starts a configurable Leader Board will be shown along with scores for your favorite golfers.
 
@@ -29,7 +29,7 @@ Whats New?
 
 ### With Location
 
-![image](images/screenshot-1.png)
+![image](images/screenshot-5.png)
 
 ### No Locations
 
@@ -45,7 +45,7 @@ Whats New?
 ## Leader Board View
 
 ### Color With Flags Large Font
-![image](images/screenshot-5.png)
+![image](images/screenshot-1.png)
 
 
 ### No Color With Flag
@@ -72,7 +72,7 @@ Option|Description
 `numTournaments` | Number of upcoming tournaments to show when there is not an active tournment in progress or  `showBoards` is set false. <br> <br> _Type:_`Number`<br>Defaults to 3
 `showLocation`| Whether to show the location of the tournament in the tournament details header. If set to true the location will appear under the tournament name in a smaller lighter font.<br><br>_Type:_ `Boolean`<br>Defaults to true
 `showPurse`| Whether to show the purse information in the tournament details header. If using a larger font hiding the purse leads to a cleaner format of the tournament details.<br><br>Type: `Boolean`<br>Defaults to true
-`showRankings`| Whether to show FedEx Cup standings and Official World Go;g Rankings when a tournament is not active. If set to true the module will rotate between the upcoming tournaments, FedEx Cup, and OWGR. <br><br>Type: `Boolean`<br>Defaults to true
+`showRankings`| Whether to show FedEx Cup standings and Official World Golf Rankings when a tournament is not active. If set to true the module will rotate between the upcoming tournaments, FedEx Cup, and OWGR. <br><br>Type: `Boolean`<br>Defaults to true
 `numRankings`| The amount players to show in the Fedex Cup and OWGR rankings. The number should be set between 1 and 50.<br><br>Type: `Number`<br>Defaults to 5
 `showBoards`| Whether to show the Leaderboard and favorites for and Active tournament. If set to false the module will just show the current tournament. See Upcoming tournament screen shot above. <br> <br> _Type:_ `Boolean`<br> Defaults to true
 `numLeaderboard`| The amount of places to show on the leaderboard<br> <br> _Type:_ `Number` <br> Defaults to 5
@@ -80,10 +80,11 @@ Option|Description
 `includeTies`| Whether to include more than `numLeaderboard` players due to ties. If false only `numLeaderboard` players will be shown and `maxLeaderboard` will be irrelevant. <br> <br> _Type:_ `Boolean`<br> Defaults to true
 `showLogo`| Shows the PGA logo in the header<br><br>_Type:_ `Boolean` <br>Defaults to false
 `showFlags`| Shows the flag of the players country next to the player in the leaderboards<br><br>_Type:_ `Boolean` <br> Defaults to false
-`largerFonts`| Whether to display larger fonts for the module. If set to false it will use the `xsmall` style define by Magic Mirror. If set to true it will use the `small` style defined by Magic Mirror. <br><br>Type: `Boolean`<br>Defaults to false
+`largerFont`| Whether to display larger fonts for the module. If set to false it will use the `xsmall` style define by MagicMirror. If set to true it will use the `small` style defined by MagicMirror. <br><br>Type: `Boolean`<br>Defaults to false
 `favorites`| Array of favorite boards to show. Each favorite board has a headerName and a favoriteList an array of player ids(String). See sample configuration for details. All the players in the favorite board object will be displayed on the board if they are playing in the current tournament. See section below on how to find the playerid of your favorite players <br> <br> _Type:_ `Array` of favorite board `[ Object ]` <br> Defaults to an empty array.
 `remoteFavoritesFile`| Location of a remote File to use for favorites. The format of the file is a json file with exactly what you would set in the favorites configuration. If this option is set the favorites defined in the config will be ignored. If you chose to read the file from the internet the format will be a url. <br><br>For example reading the file from dropbox would look something like this <br> `"https://dl.dropboxusercontent.com/s/7########favorites.json"` <br><br>If using a local file setting would look like this <br> `"utilities/favorites.json"` <br> where the favorites file is stored in a directory name utilities under the MMM-PGA folder<br><br>Type: String containing url to favorites file.<br> Defaults to null
-
+`rapidAPIKey`| Your RapidAPI key, necessary if you want to display FEDEXCUP and OWGR standings.<br>Type: String<br>Defaults to the dummy `"rapid-api-key"`
+`rotateInterval`| Rotate interval in milliseconds<br>Type: Int<br>Defaults to `30000`
 
 # Example Configuration
 
@@ -94,7 +95,7 @@ Option|Description
 			maxWidth: "100%",
 			config: {
 				colored: true,
-				rotateInterval: 30 * 1000,
+				rotateInterval: 30 * 1000, //milliseconds
 				animationSpeed: 5,
 				showBoards: true,
 				showLocation: true,
@@ -115,11 +116,11 @@ Option|Description
 
 # Remote Favorites
 
-I like to change my favorite boards every week depending on who is playing, fantasy lineups, betting etc... So I wanted a way where I could update my favorites without having to change my config om my Magic Mirror. I also wanted the favorites to automatically be updated without having to restart my Mirror every time. I decided to add the abilty to send a post request to the MMM-PGA module that will cause it to reload the favorites information. I could have configured the module to just relaod favorite information eveyr 10 minutes or so but that would have been uneeded traffic. So if you update your remote favorites file the following command will cause MMM-PGA to relaod the favorites
+I like to change my favorite boards every week depending on who is playing, fantasy lineups, betting etc... So I wanted a way where I could update my favorites without having to change my config om my MagicMirror. I also wanted the favorites to automatically be updated without having to restart my Mirror every time. I decided to add the abilty to send a post request to the MMM-PGA module that will cause it to reload the favorites information. I could have configured the module to just relaod favorite information eveyr 10 minutes or so but that would have been uneeded traffic. So if you update your remote favorites file the following command will cause MMM-PGA to relaod the favorites
 
 `curl -X POST  http://localhost:8080/MMM-PGA-UpdateFavs` 
 
-you can use localhost if running the command from the host wher the magic mirror is installed or you can add the ip address/hostname to the url and run it from any machine on your network. Make sure to configure your Magic Mirror to allow calls from other nmachine if doing this.
+you can use localhost if running the command from the host wher the MagicMirror is installed or you can add the ip address/hostname to the url and run it from any machine on your network. Make sure to configure your MagicMirror to allow calls from other nmachine if doing this.
 
 Because i did not want to update my file and then remember to run a curl request every time. I wrote i python script to check if my favorites file had changed and if it did it will send the appropriate post. I run this script in cron and it will automatifcally update my mirror every time the file changes. I have included the python script in the utilities directory under the MMM-PGA module. There is also a sample favorites.json file stored there.
 
