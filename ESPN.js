@@ -178,9 +178,9 @@ module.exports = {
 
         }
         var teeTime = moment(displayValue, "YYYY-MM-DD HH:mm:ss Z");
-        if (teeTime.isValid()) {
-            return teeTime.local().format("h:mm a") + append;
-        }
+        //if (teeTime.isValid()) {
+        //    return teeTime.local().format("h:mm a") + append;
+        //}
 
         return displayValue;
     },
