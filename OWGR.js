@@ -25,6 +25,7 @@ module.exports = {
             rankings: []
         };
         var payload = data;
+	console.log(payload.message);
 	if (payload.message == "Too many requests") {
 		console.log(payload);
 	} else {
