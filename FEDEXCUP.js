@@ -29,21 +29,23 @@ module.exports = {
             rankings: []
         };
         var payload = data;
-        if (payload.results.rankings.length > 1) {
-            for (var i = 0; i < payload.results.rankings.length; i++) {
-				flagName = payload.results.rankings[i].player_name.replace(/\s/g, '');
-				var lstposition = payload.results.rankings[i].position + payload.results.rankings[i].movement
-                fcRanking.rankings.push({
-                    "name": payload.results.rankings[i].player_name,
-                    "curPosition": payload.results.rankings[i].position,
-                    "lwPosition": lstposition,
-                    "points": payload.results.rankings[i].points,
-                    "flagUrl": flags.getFlagURL(flagName)
-                });
-                if (i == maxPlayers)
-                    break;
-            }
-        } 
+	if (payload.results.hasOwnProperty("rankings")) {
+	        if (payload.results.rankings.length > 1) {
+	            for (var i = 0; i < payload.results.rankings.length; i++) {
+					flagName = payload.results.rankings[i].player_name.replace(/\s/g, '');
+					var lstposition = payload.results.rankings[i].position + payload.results.rankings[i].movement
+	                fcRanking.rankings.push({
+	                    "name": payload.results.rankings[i].player_name,
+	                    "curPosition": payload.results.rankings[i].position,
+	                    "lwPosition": lstposition,
+	                    "points": payload.results.rankings[i].points,
+	                    "flagUrl": flags.getFlagURL(flagName)
+	                });
+	                if (i == maxPlayers)
+	                    break;
+	            }
+	        } 
+	}
         callback(fcRanking);
     }
 
