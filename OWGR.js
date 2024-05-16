@@ -41,7 +41,7 @@ module.exports = {
 	            }
 	        } 
 	} catch (error) {
-		console.log("ERROR: Unable to display OWGR rankings" + payload);
+		console.log("ERROR: Unable to display OWGR rankings" + payload.message);
 	}
 		callback(owgrRanking);
     }
