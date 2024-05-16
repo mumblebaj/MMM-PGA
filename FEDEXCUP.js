@@ -29,7 +29,7 @@ module.exports = {
             rankings: []
         };
         var payload = data;
-	if (payload.results.hasOwnProperty("rankings")) {
+	if (payload.results.ContainsKey("rankings")) {
 	        if (payload.results.rankings.length > 1) {
 	            for (var i = 0; i < payload.results.rankings.length; i++) {
 					flagName = payload.results.rankings[i].player_name.replace(/\s/g, '');
