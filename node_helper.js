@@ -82,6 +82,7 @@ module.exports = NodeHelper.create({
             if (this.started !== true) {
               this.started = true;
               this.scheduleUpdate(); 
+	      console.log(this.config);
 	      console.log(this.config.showRankings);
 	      if (false) {
               	this.scheduleRankingUpdate();
