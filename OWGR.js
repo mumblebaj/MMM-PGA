@@ -25,20 +25,24 @@ module.exports = {
             rankings: []
         };
         var payload = data;
-        if (payload.results.rankings.length > 1) {
-            for (var i = 0; i < payload.results.rankings.length; i++) {
-		flagName = payload.results.rankings[i].player_name.replace(/\s/g, '');
-                owgrRanking.rankings.push({
-                    "name": payload.results.rankings[i].player_name,
-                    "curPosition": payload.results.rankings[i].position,
-                    "lwPosition": "1",
-                    "points": payload.results.rankings[i].total_points,
-                    "flagUrl": flags.getFlagURL(flagName)
-                });
-                if (i == maxPlayers)
-                    break;
-            }
-        } 
+	if (payload.message == "Too many requests") {
+		console.log(payload);
+	} else {
+	        if (payload.results.rankings.length > 1) {
+	            for (var i = 0; i < payload.results.rankings.length; i++) {
+			flagName = payload.results.rankings[i].player_name.replace(/\s/g, '');
+	                owgrRanking.rankings.push({
+	                    "name": payload.results.rankings[i].player_name,
+	                    "curPosition": payload.results.rankings[i].position,
+	                    "lwPosition": "1",
+	                    "points": payload.results.rankings[i].total_points,
+	                    "flagUrl": flags.getFlagURL(flagName)
+	                });
+	                if (i == maxPlayers)
+	                    break;
+	            }
+	        } 
+	}
 		callback(owgrRanking);
     }
 
