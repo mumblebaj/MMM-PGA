@@ -29,6 +29,7 @@ module.exports = {
             rankings: []
         };
         var payload = data;
+	console.log(payload);
 	if ("rankings" in payload.results) {
 	        if (payload.results.rankings.length > 1) {
 	            for (var i = 0; i < payload.results.rankings.length; i++) {
