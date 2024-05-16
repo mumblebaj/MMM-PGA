@@ -96,7 +96,7 @@ Module.register("MMM-PGA", {
 
 
         //Schedule the data Retrival on the server side
-        this.sendSocketNotification("CONFIG",this.config);
+        this.sendSocketNotification("MMM-PGA-CONFIG",this.config);
 
         this.fontClass = (this.config.largerFont)?"small":"xsmall";
 
