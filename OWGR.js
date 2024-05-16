@@ -26,7 +26,7 @@ module.exports = {
         };
         var payload = data;
 	console.log(payload.message);
-	if (payload.message == "Too many requests") {
+	if (payload.message == "Too many requests" || payload.message == "You are not subscribed to this API") {
 		console.log(payload);
 	} else {
 	        if (payload.results.rankings.length > 1) {
