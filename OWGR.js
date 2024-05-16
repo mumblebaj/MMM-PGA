@@ -25,10 +25,7 @@ module.exports = {
             rankings: []
         };
         var payload = data;
-	console.log(payload.message);
-	if (payload.message == "Too many requests" || payload.message == "You are not subscribed to this API") {
-		console.log(payload);
-	} else {
+	try {
 	        if (payload.results.rankings.length > 1) {
 	            for (var i = 0; i < payload.results.rankings.length; i++) {
 			flagName = payload.results.rankings[i].player_name.replace(/\s/g, '');
@@ -43,6 +40,8 @@ module.exports = {
 	                    break;
 	            }
 	        } 
+	} catch (error) {
+		console.log("ERROR: Unable to display OWGR rankings" + payload);
 	}
 		callback(owgrRanking);
     }
