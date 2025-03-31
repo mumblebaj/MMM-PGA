@@ -200,7 +200,7 @@ Module.register("MMM-PGA", {
         
         players.sort(function (a, b) { return a.sortOrder - b.sortOrder; });
 
-        console.log("MMM-PGA boardindex:" + this.boardIndex);
+        //console.log("MMM-PGA boardindex:" + this.boardIndex);
 
         //If Favorites is enabled create Array with only the Favorites
         function includePlayer(player){
