@@ -25,20 +25,24 @@ module.exports = {
             rankings: []
         };
         var payload = data;
-        if (payload.results.rankings.length > 1) {
-            for (var i = 0; i < payload.results.rankings.length; i++) {
-		flagName = payload.results.rankings[i].player_name.replace(/\s/g, '');
-                owgrRanking.rankings.push({
-                    "name": payload.results.rankings[i].player_name,
-                    "curPosition": payload.results.rankings[i].position,
-                    "lwPosition": "1",
-                    "points": payload.results.rankings[i].total_points,
-                    "flagUrl": flags.getFlagURL(flagName)
-                });
-                if (i == maxPlayers)
-                    break;
-            }
-        } 
+	try {
+	        if (payload.results.rankings.length > 1) {
+	            for (var i = 0; i < payload.results.rankings.length; i++) {
+			flagName = payload.results.rankings[i].player_name.replace(/\s/g, '');
+	                owgrRanking.rankings.push({
+	                    "name": payload.results.rankings[i].player_name,
+	                    "curPosition": payload.results.rankings[i].position,
+	                    "lwPosition": "1",
+	                    "points": payload.results.rankings[i].total_points,
+	                    "flagUrl": flags.getFlagURL(flagName)
+	                });
+	                if (i == maxPlayers)
+	                    break;
+	            }
+	        } 
+	} catch (error) {
+		console.log("WARN: Unable to display OWGR rankings: " + payload.message);
+	}
 		callback(owgrRanking);
     }
 

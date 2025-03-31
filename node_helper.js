@@ -76,20 +76,24 @@ module.exports = NodeHelper.create({
 
         var self = this;
 
-        if (notification === 'CONFIG') {
+        if (notification === 'MMM-PGA-CONFIG') {
             console.log ("MMM-PGA config received");
             this.config = payload;
             if (this.started !== true) {
               this.started = true;
               this.scheduleUpdate(); 
-              this.scheduleRankingUpdate();
+	      if (this.config.showRankings) {
+              	this.scheduleRankingUpdate();
+	      }
         
             }
 
             //Load Data to begin with so we dont have to wait for next server load
             //Each client will make a call at startupß
             this.getPGAData(this.config.numTournaments);
-            this.getRankingData(this.config.maxNumRankings, this.config.rapidAPIKey);
+	    if (this.config.showRankings) {
+            	this.getRankingData(this.config.maxNumRankings, this.config.rapidAPIKey);
+	    }
             
         }
         
