@@ -562,7 +562,7 @@ Module.register("MMM-PGA", {
 
     // this rotates your data
     scheduleCarousel: function () {
-        console.log("schedule carousle MMM-PGA");
+        //console.log("schedule carousel MMM-PGA");
         this.rotateInterval = setInterval(() => {
 
             if (this.config.favorites.length == 0) {
