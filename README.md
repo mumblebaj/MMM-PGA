@@ -1,10 +1,9 @@
 # MMM-PGA
 
-This a module for MagicMirror² <br>
-https://magicmirror.builders <br>
-https://github.com/MichMich/MagicMirror
+A [MagicMirror²](https://magicmirror.builders) Module to show Upcoming PGA Tournaments. Once the tournament starts a configurable Leader Board will be shown along with scores for your favorite golfers.
 
-A MagicMirror² Module to show Upcoming PGA Tournaments. Once the tournament starts a configurable Leader Board will be shown along with scores for your favorite golfers.
+[![Platform](https://img.shields.io/badge/platform-MagicMirror-informational)](https://MagicMirror.builders)
+[![license](https://img.shields.io/github/license/mashape/apistatus.svg)](LICENSE)
 
 # Release Notes
 
@@ -14,6 +13,10 @@ Whats New?
 - node-fetch
 
 ## Updates
+
+### v1.3.1 2025/04/02
+- Update Fedex url
+
 ### v1.3.0 2024/02/03
 - Removed request
 - Add node-fetch@2.6.1
