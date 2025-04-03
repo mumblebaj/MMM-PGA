@@ -1,5 +1,5 @@
 
-const request = require('node-fetch');
+
 const flags = require('./flags.js');
 
 
