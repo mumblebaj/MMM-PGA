@@ -1,20 +1,22 @@
 
 const request = require('node-fetch');
 const flags = require('./flags.js');
-
+const moment = require('moment');
 
 //TODO: Add comments
 
 module.exports = {
 
     url: "https://www.pgatour.com/fedexcup/official-standings.html",
-    rapidUrl: 'https://golf-leaderboard-data.p.rapidapi.com/tour-rankings/2/2024',
+    rapidUrl: 'https://golf-leaderboard-data.p.rapidapi.com/tour-rankings/2/',
 
     async getFedExCupData(maxPlayers, rapidAPIKey, callback){
-		var rapidKey = rapidAPIKey;
+	const currentYear = moment().year();
+        const urlFED = this.rapidUrl + currentYear;
+	    	var rapidKey = rapidAPIKey;
 		console.log("FEDEX MMM-PGA retrieving FedEx Cup Standings");
 
-        const response = await fetch(this.rapidUrl, {
+        const response = await fetch(urlFED, {
             method: 'GET',
             headers: {
                 'X-RapidAPI-Key': rapidKey,
