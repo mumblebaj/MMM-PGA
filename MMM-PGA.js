@@ -506,7 +506,7 @@ Module.register("MMM-PGA", {
 
         // If Data is not Loaded yet display the Loading Caption
         if (!this.loaded || !this.tournamentsLoaded) {
-            wrapper.innerHTML = "Loading . . .";
+            wrapper.innerHTML = "Loading MMM-PGA . . .";
             wrapper.classList.add("bright", "light", "small");
             return wrapper;
         }
@@ -551,7 +551,7 @@ Module.register("MMM-PGA", {
             var leaderboard = this.buildLeaderBoard(tourney);
             wrapper.appendChild(leaderboard);
         }
-
+	Log.debug(wrapper);
         return wrapper;
 
     }, 
