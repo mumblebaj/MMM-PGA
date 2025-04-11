@@ -1,7 +1,7 @@
 {
   "name": "mmm-pga",
   "version": "1.3.2",
-  "description": "This a module for MagicMirror² <br>\r https://magicmirror.builders <br>\r https://github.com/MagicMirrorOrg/MagicMirror",
+  "description": "This a module for MagicMirror² <br>\r https://magicmirror.builders <br>\r https://github.com/MichMich/MagicMirror",
   "main": "MMM-PGA.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
