@@ -14,6 +14,9 @@ Whats New?
 
 ## Updates
 
+### v1.3.2
+- Update as per request in issue [#Issue2](https://github.com/mumblebaj/MMM-PGA/issues/2)
+
 ### v1.3.1 2025/04/02
 - Update Fedex url
 

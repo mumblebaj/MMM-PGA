@@ -16,7 +16,7 @@ module.exports = {
             method: 'get'
         })
 
-            const body = await response.json();
+        const body = await response.json();
 
         var ESPNObj = body.events;
 
@@ -44,7 +44,7 @@ module.exports = {
         tournament.status = event.competitions[0].status ? event.competitions[0].status.type.detail : "";
         tournament.purse = event.displayPurse;
         tournament.defendingChamp = event.defendingChampion ? event.defendingChampion.athlete.displayName : ""
-            tournament.currentRound = this.getCurrentRound(event);
+        tournament.currentRound = this.getCurrentRound(event);
         tournament.playoff = false;
 
         //Load the Players for the tournament
@@ -82,11 +82,11 @@ module.exports = {
     async getTournaments(numTournaments, callback) {
         var totalTourn = 0
 
-            const response = await fetch(this.url, {
-                method: 'get',
-            })
+        const response = await fetch(this.url, {
+            method: 'get',
+        })
 
-            const body = await response.json();
+        const body = await response.json();
 
         var ESPNObj = body.events;
 
@@ -106,17 +106,17 @@ module.exports = {
         for (i = 0; i < totalTourn; i++) {
             var tournament = ESPNObj[i];
             var tourName = tournament.name ? tournament.name : ""
-                var strDate = tournament.startDate ? tournament.startDate : ""
-                var nDate = tournament.endDate ? tournament.endDate : ""
-                var venue = tournament.locations[0] ? tournament.locations[0].venue.fullName : ""
-                tournaments.push({
-                    "name": tourName, //tournament.name,
-                    "date": this.getEventDate(strDate, nDate), //tournament.startDate,tournament.endDate),
-                    "location": venue, //tournament.locations[0].venue.fullName,
-                    "purse": this.setUndefStr(tournament.purse, "TBD"),
-                    "defendingChamp": this.setUndefStr(tournament.athlete.name)
+            var strDate = tournament.startDate ? tournament.startDate : ""
+            var nDate = tournament.endDate ? tournament.endDate : ""
+            var venue = tournament.locations[0] ? tournament.locations[0].venue.fullName : ""
+            tournaments.push({
+                "name": tourName, //tournament.name,
+                "date": this.getEventDate(strDate, nDate), //tournament.startDate,tournament.endDate),
+                "location": venue, //tournament.locations[0].venue.fullName,
+                "purse": this.setUndefStr(tournament.purse, "TBD"),
+                "defendingChamp": this.setUndefStr(tournament.athlete.name)
 
-                });
+            });
         }
 
         callback(tournaments);
@@ -172,17 +172,22 @@ module.exports = {
         var displayValue = player.status.displayValue;
         var append = (player.status.startHole == "1") ? "" : "*";
 
+        var teeTime = moment(displayValue, "YYYY-MM-DD HH:mm:ss Z");
         if (typeof displayValue == 'undefined' || displayValue == null) {
 
-            return player.status.displayThru + append;
+            returnValue = player.status.displayThru + append;
 
-        }
-        var teeTime = moment(displayValue, "YYYY-MM-DD HH:mm:ss Z");
-        if (teeTime.isValid()) {
-            return teeTime.local().format("h:mm a") + append;
+        } else if (displayValue == "F") {
+            returnValue = displayValue;
+        } else if (player.status.thru <= 17 && player.status.thru >= 1) {
+            returnValue = displayValue + append;
+        } else if (teeTime.isValid()) {
+            returnValue = teeTime.local().format("h:mm a") + append;
+        } else {
+            returnValue = displayValue;
         }
 
-        return displayValue;
+        return returnValue;
     },
 
     setUndefStr: function (obj, defStr = "") {
