@@ -9,7 +9,7 @@ module.exports = {
     rapidUrl: 'https://golf-leaderboard-data.p.rapidapi.com/world-rankings',
 
     async getOWGRData(maxPlayers, rapidAPIKey, callback) {
-        if (rapidAPIKey !== "rapid-api-key") {
+
           var rapidKey = rapidAPIKey;
           const response = await fetch(this.rapidUrl, {
               method: 'GET',
@@ -46,7 +46,7 @@ module.exports = {
             console.error("URL fetch response: " + response.statusText);
           }
       callback(owgrRanking);
-      }
+
     }
 
 }

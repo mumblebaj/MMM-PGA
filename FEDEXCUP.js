@@ -12,7 +12,7 @@ module.exports = {
     async getFedExCupData(maxPlayers, rapidAPIKey, callback){
         const currentYear = moment().year();
         const urlFED = this.rapidUrl + currentYear;
-        if (rapidAPIKey !== "rapid-api-key") {
+
           var rapidKey = rapidAPIKey;
           console.log("FEDEX MMM-PGA retrieving FedEx Cup Standings");
 
@@ -52,7 +52,7 @@ module.exports = {
                 console.error("URL fetch response: " + response.statusText);
               }
               callback(fcRanking);
-          }
+
     }
 
 };

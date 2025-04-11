@@ -89,8 +89,9 @@ module.exports = NodeHelper.create({
             //Load Data to begin with so we dont have to wait for next server load
             //Each client will make a call at startupß
             this.getPGAData(this.config.numTournaments);
-            this.getRankingData(this.config.maxNumRankings, this.config.rapidAPIKey);
-            
+            if (this.config.showRankings) {
+              this.getRankingData(this.config.maxNumRankings, this.config.rapidAPIKey);
+            }
         }
         
             
