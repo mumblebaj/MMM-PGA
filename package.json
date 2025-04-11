@@ -1,6 +1,6 @@
 {
   "name": "mmm-pga",
-  "version": "1.3.2",
+  "version": "1.3.3",
   "description": "This a module for MagicMirror² <br>\r https://magicmirror.builders <br>\r https://github.com/MichMich/MagicMirror",
   "main": "MMM-PGA.js",
   "scripts": {

@@ -14,6 +14,9 @@ Whats New?
 
 ## Updates
 
+### v1.3.3
+- Fix showRankings where if set it was still trying to fetch ranking data
+
 ### v1.3.2
 - Update as per request in issue [#Issue2](https://github.com/mumblebaj/MMM-PGA/issues/2)
 
