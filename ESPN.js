@@ -172,17 +172,22 @@ module.exports = {
         var displayValue = player.status.displayValue;
         var append = (player.status.startHole == "1") ? "" : "*";
 
+        var teeTime = moment(displayValue, "YYYY-MM-DD HH:mm:ss Z");
         if (typeof displayValue == 'undefined' || displayValue == null) {
 
-            return player.status.displayThru + append;
+            returnValue = player.status.displayThru + append;
 
-        }
-        var teeTime = moment(displayValue, "YYYY-MM-DD HH:mm:ss Z");
-        if (teeTime.isValid()) {
-            return teeTime.local().format("h:mm a") + append;
+                } else if (displayValue == "F") {
+            returnValue = displayValue;
+        } else if (player.status.thru <= 17 && player.status.thru >= 1) {
+            returnValue = displayValue + append;
+        } else if (teeTime.isValid()) {
+            returnValue = teeTime.local().format("h:mm a") + append;
+        } else {
+            returnValue = displayValue;
         }
 
-        return displayValue;
+        return returnValue;
     },
 
     setUndefStr: function (obj, defStr = "") {

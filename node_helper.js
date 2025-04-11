@@ -5,7 +5,6 @@
  *
  */
 const NodeHelper = require('node_helper');
-const request = require('request');
 var ESPN = require('./ESPN.js');
 const OWGR = require('./OWGR.js');
 const FEDEXCUP = require('./FEDEXCUP.js');
