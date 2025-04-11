@@ -10,7 +10,7 @@ A [MagicMirror²](https://magicmirror.builders) Module to show Upcoming PGA Tour
 Whats New?
 
 ## Dependencies
-- node-fetch
+- None!
 
 ## Updates
 
@@ -65,7 +65,6 @@ Whats New?
 
 1. Navigate into the MagicMirror/modules and execute
 2. Execute `git clone https://github.com/mumblebaj/MMM-PGA`
-3. `cd MMM-PGA` and `npm install`
 
 # Configuration
 
