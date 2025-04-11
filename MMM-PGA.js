@@ -36,7 +36,6 @@ Module.register("MMM-PGA", {
         showFlags: false,
         largerFont: false,
         remoteFavoritesFile: null,
-        rapidAPIKey: "rapid-api-key",
         favorites: [],
 
     },
