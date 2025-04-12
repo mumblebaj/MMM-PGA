@@ -10,9 +10,12 @@ A [MagicMirror²](https://magicmirror.builders) Module to show Upcoming PGA Tour
 Whats New?
 
 ## Dependencies
-- node-fetch
+- none
 
 ## Updates
+
+### v1.3.4
+- Remove `node-fetch` from package.json
 
 ### v1.3.3
 - Fix showRankings where if set it was still trying to fetch ranking data
