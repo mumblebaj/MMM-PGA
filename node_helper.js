@@ -1,9 +1,3 @@
-/* Magic Mirror
- * Module: MMM-PGA
- * By mcl8on
- * Maintaned by: mumblebaj
- *
- */
 const NodeHelper = require('node_helper');
 var ESPN = require('./ESPN.js');
 const OWGR = require('./OWGR.js');

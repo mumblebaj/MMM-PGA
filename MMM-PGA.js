@@ -1,11 +1,4 @@
 
-/* Magic Mirror
- * Module: MMM-PGA
- *
- * By mcl8on
- */
-
-
 Module.register("MMM-PGA", {
 
     requiresVersion: "2.1.0",
