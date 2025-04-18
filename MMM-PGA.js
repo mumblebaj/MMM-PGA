@@ -37,7 +37,6 @@ Module.register("MMM-PGA", {
         largerFont: false,
         remoteFavoritesFile: null,
         favorites: [],
-
     },
 
     getStyles: function () {

@@ -1,6 +1,6 @@
 {
   "name": "mmm-pga",
-  "version": "1.3.4",
+  "version": "1.3.5",
   "description": "This a module for MagicMirror² <br>\r https://magicmirror.builders <br>\r https://github.com/MagicMirrorOrg/MagicMirror",
   "main": "MMM-PGA.js",
   "scripts": {
@@ -10,8 +10,8 @@
     "type": "git",
     "url": "git+https://github.com/mumblebaj/MMM-PGA.git"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "mumblebaj",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/mumblebaj/MMM-PGA/issues"
   },

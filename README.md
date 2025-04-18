@@ -14,6 +14,10 @@ Whats New?
 
 ## Updates
 
+### v1.3.5
+- Remove reference to request
+- Update license to MIT
+
 ### v1.3.4
 - Remove `node-fetch` from package.json
 
